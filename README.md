@@ -1,2 +1,2 @@
 # Biodiff
-A powerful bioinformatics tool!
+> A powerful bioinformatics tool!
