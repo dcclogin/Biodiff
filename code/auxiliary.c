@@ -24,7 +24,7 @@ void usage(int option) {
 			break;
 		case 1:
 			printf("============================================================\n");
-			printf("  1. Usage: biodiff -c -a ca1,ca2 -b cb1,cb2 file_A file_B 	\n");
+			printf("  1. Usage: biodiff -c -a ca1,ca2 -b cb1,cb2 file_A file_B  \n");
 			printf("  2. Usage: biodiff -n -a ca -b cb file_A file_B [\"] [\"]  \n");
 			printf("============================================================\n");
 			break;
