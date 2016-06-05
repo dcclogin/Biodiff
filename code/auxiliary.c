@@ -8,7 +8,7 @@ void usage(int option) {
 	switch (option) {
 		case 0:
 			printf("===================== Welcome to use biodiff! =================\n");
-			printf("  1. Usage: biodiff -c -a ca1,ca2 -b cb1,cb2 file_A file_B 	   \n");
+			printf("  1. Usage: biodiff -c -a ca1,ca2 -b cb1,cb2 file_A file_B     \n");
 			printf("  2. Usage: biodiff -n -a ca -b cb file_A file_B [\"] [\"]     \n");
 			printf("---------------------------------------------------------------\n");
 			printf("  > * [-c] refers to coordinate-based comparation;             \n");
