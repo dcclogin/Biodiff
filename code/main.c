@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 		}
 	}
 	else {
-		if (APP == '-' &&
+		if (APP == '-' && 
 			A10 == '-' && 
 			A11 == 'a' && 
 			A30 == '-' && 
