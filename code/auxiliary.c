@@ -95,7 +95,7 @@ void getPattern(char *line, char *pattern, char token, int c) {
             pIn++;
         }
     }
-    for (;  *pIn != '\0' && *pIn != token; pIn++, pOut++) {
+    for (; *pIn != '\0' && *pIn != token; pIn++, pOut++) {
     	*pOut = *pIn;
     }
     *pOut = '\0';
