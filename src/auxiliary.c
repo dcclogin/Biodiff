@@ -1,3 +1,10 @@
+/*
+* @Author: rumia
+* @Date:   2016-08-08 23:23:45
+* @Last Modified by:   rumia
+* @Last Modified time: 2016-08-09 03:22:52
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -78,7 +85,7 @@ int isInteger(char *str){
 	}
 }
 
-/* getPattern: get a specific column according to c */ 
+/* getPattern: get a specific column according to c */
 void getPattern(char *line, char *pattern, char token, int c) {
 	int i = 1;
 	char *pIn = line;

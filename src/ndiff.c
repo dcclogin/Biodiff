@@ -1,3 +1,10 @@
+/*
+* @Author: rumia
+* @Date:   2016-08-08 23:23:45
+* @Last Modified by:   rumia
+* @Last Modified time: 2016-08-11 03:43:22
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,10 +12,10 @@
 #include "retrieval.h"
 
 /* ndiff: name-based diff */
-void ndiff(int col_a, int col_b, 
-	char token_a, char token_b, 
-	FILE *ptr_a, FILE *ptr_b, 
-	FILE *ptr_aba, FILE *ptr_abb, 
+void ndiff(int col_a, int col_b,
+	char token_a, char token_b,
+	FILE *ptr_a, FILE *ptr_b,
+	FILE *ptr_aba, FILE *ptr_abb,
 	FILE *ptr_a_b, FILE *ptr_b_a) {
 
 	int isMatch;
@@ -31,7 +38,7 @@ void ndiff(int col_a, int col_b,
 	// search and generate target files A&B_B and B-A
 	while (fgets(line_b, LINE_BUFFER, ptr_b) != NULL) {
 		if (*line_b == '\n') {
-			; // skip the empty lines... 
+			; // skip the empty lines...
 		}
 		else {
 			getPattern(line_b, pattern_b, token_b, col_b);

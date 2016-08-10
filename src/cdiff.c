@@ -1,3 +1,10 @@
+/*
+* @Author: rumia
+* @Date:   2016-08-08 23:23:45
+* @Last Modified by:   rumia
+* @Last Modified time: 2016-08-11 03:42:19
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,8 +13,8 @@
 
 /* cdiff: coordinate-based diff */
 void cdiff(char *cols_a, char *cols_b,
-	FILE *ptr_a, FILE *ptr_b, 
-	FILE *ptr_aba, FILE *ptr_abb, 
+	FILE *ptr_a, FILE *ptr_b,
+	FILE *ptr_aba, FILE *ptr_abb,
 	FILE *ptr_a_b, FILE *ptr_b_a) {
 
 	char col_a1[5], col_a2[5];
@@ -19,7 +26,7 @@ void cdiff(char *cols_a, char *cols_b,
 	int icol_a1 = atoi(col_a1);
 	int icol_a2 = atoi(col_a2);
 	int icol_b1 = atoi(col_b1);
-	int icol_b2 = atoi(col_b2); 
+	int icol_b2 = atoi(col_b2);
 
 	int isMatch;
 	char line_a[LINE_BUFFER];
@@ -53,7 +60,7 @@ void cdiff(char *cols_a, char *cols_b,
 			strcat(pattern_b1, pattern_b2);
 			isMatch = trieSearch(pattern_b1, root_a);
 			if (isMatch) {
-				fprintf(ptr_abb, "%s", line_b); 
+				fprintf(ptr_abb, "%s", line_b);
 			}
 			else {
 				fprintf(ptr_b_a, "%s", line_b);

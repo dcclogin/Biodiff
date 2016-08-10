@@ -1,21 +1,9 @@
 /*
- * =====================================================================================
- *
- *       Filename:  biodiff.c
- *
- *    Description:  A powerful bioinformatics tool!
- *
- *        Version:  1.0
- *        Created:  2016/05/26 20:42:36
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Ding Chenchao, dccrumia@gmail.com
- *        Company:  Shanghai Jiao Tong University
- *
- * =====================================================================================
- */
-
+* @Author: rumia
+* @Date:   2016-08-08 23:23:45
+* @Last Modified by:   rumia
+* @Last Modified time: 2016-08-11 03:42:53
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -80,9 +68,9 @@ int main(int argc, char **argv) {
 	}
 	else {
 		if (APP == '-' &&
-			A10 == '-' && 
-			A11 == 'a' && 
-			A30 == '-' && 
+			A10 == '-' &&
+			A11 == 'a' &&
+			A30 == '-' &&
 			A31 == 'b') {
 			// open the input files
 			FILE *ptr_a = fopen(A5, "r");
@@ -103,9 +91,9 @@ int main(int argc, char **argv) {
 			FILE *ptr_abb = fopen("A&B_B", "w");
 			FILE *ptr_a_b = fopen("A-B", "w");
 			FILE *ptr_b_a = fopen("B-A", "w");
-			if ((ptr_aba == NULL) || 
-				(ptr_abb == NULL) || 
-				(ptr_a_b == NULL) || 
+			if ((ptr_aba == NULL) ||
+				(ptr_abb == NULL) ||
+				(ptr_a_b == NULL) ||
 				(ptr_b_a == NULL)) {
 				usage(5);
 				exit(EXIT_FAILURE);
@@ -129,7 +117,7 @@ int main(int argc, char **argv) {
 					isInteger(col_b2) &&
 					strstr(A2, ",") &&
 					strstr(A4, ",")) {
-					// into the coordinate-based diff 
+					// into the coordinate-based diff
 					CDIFF();
 				}
 				else {
@@ -139,7 +127,7 @@ int main(int argc, char **argv) {
 			}
 			/* [-n] mode: name-based diff */
 			else if (A01 == 'n') {
-				if (isInteger(A2) == 1 && 
+				if (isInteger(A2) == 1 &&
 					isInteger(A4) == 1) {
 					char token_a = '\t';
 					char token_b = '\t';
@@ -182,9 +170,9 @@ int main(int argc, char **argv) {
 }
 
 /* cdiff: coordinate-based diff */
-void cdiff(char *cols_a, char *cols_b, 
-	FILE *ptr_a, FILE *ptr_b, 
-	FILE *ptr_aba, FILE *ptr_abb, 
+void cdiff(char *cols_a, char *cols_b,
+	FILE *ptr_a, FILE *ptr_b,
+	FILE *ptr_aba, FILE *ptr_abb,
 	FILE *ptr_a_b, FILE *ptr_b_a) {
 
 	char col_a1[5], col_a2[5];
@@ -196,7 +184,7 @@ void cdiff(char *cols_a, char *cols_b,
 	int icol_a1 = atoi(col_a1);
 	int icol_a2 = atoi(col_a2);
 	int icol_b1 = atoi(col_b1);
-	int icol_b2 = atoi(col_b2); 
+	int icol_b2 = atoi(col_b2);
 
 	int isMatch;
 	char line_a[LINE_BUFFER];
@@ -230,7 +218,7 @@ void cdiff(char *cols_a, char *cols_b,
 			strcat(pattern_b1, pattern_b2);
 			isMatch = trieSearch(pattern_b1, root_a);
 			if (isMatch) {
-				fprintf(ptr_abb, "%s", line_b); 
+				fprintf(ptr_abb, "%s", line_b);
 			}
 			else {
 				fprintf(ptr_b_a, "%s", line_b);
@@ -263,10 +251,10 @@ void cdiff(char *cols_a, char *cols_b,
 }
 
 /* ndiff: name-based diff */
-void ndiff(int col_a, int col_b, 
-	char token_a, char token_b, 
-	FILE *ptr_a, FILE *ptr_b, 
-	FILE *ptr_aba, FILE *ptr_abb, 
+void ndiff(int col_a, int col_b,
+	char token_a, char token_b,
+	FILE *ptr_a, FILE *ptr_b,
+	FILE *ptr_aba, FILE *ptr_abb,
 	FILE *ptr_a_b, FILE *ptr_b_a) {
 
 	int isMatch;
@@ -289,7 +277,7 @@ void ndiff(int col_a, int col_b,
 	// search and generate target files A&B_B and B-A
 	while (fgets(line_b, LINE_BUFFER, ptr_b) != NULL) {
 		if (*line_b == '\n') {
-			; // skip the empty lines... 
+			; // skip the empty lines...
 		}
 		else {
 			getPattern(line_b, pattern_b, token_b, col_b);
@@ -386,7 +374,7 @@ int isInteger(char *str){
 	}
 }
 
-/* getPattern: get a specific column according to c */ 
+/* getPattern: get a specific column according to c */
 char *getPattern(char *line, char *pattern, char token, int c) {
 	char *pIn = line;
     char *pOut = pattern;
@@ -420,7 +408,7 @@ Retrieval *trieGenerate(void) {
 	}
 	return temp;
 }
- 
+
 /* trieIncert: incert a pattern string to a trie */
 void trieIncert(char *str, Retrieval **pRoot) {
 	Retrieval *temp = *pRoot;

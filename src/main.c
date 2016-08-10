@@ -1,3 +1,10 @@
+/*
+* @Author: rumia
+* @Date:   2016-08-08 23:23:45
+* @Last Modified by:   rumia
+* @Last Modified time: 2016-08-11 03:43:17
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,9 +24,9 @@ int main(int argc, char **argv) {
 		}
 	}
 	if (APP == '-' &&
-		A10 == '-' && 
-		A11 == 'a' && 
-		A30 == '-' && 
+		A10 == '-' &&
+		A11 == 'a' &&
+		A30 == '-' &&
 		A31 == 'b') {
 		// open the input files
 		FILE *ptr_a = fopen(A5, "r");
@@ -41,7 +48,7 @@ int main(int argc, char **argv) {
 		FILE *ptr_abb = fopen("A_and_B_B", "w");
 		FILE *ptr_a_b = fopen("Only_in_A", "w");
 		FILE *ptr_b_a = fopen("Only_in_B", "w");
-		if ((ptr_aba == NULL) || (ptr_abb == NULL) || 
+		if ((ptr_aba == NULL) || (ptr_abb == NULL) ||
 			(ptr_a_b == NULL) || (ptr_b_a == NULL)) {
 			usage(5);
 			exit(EXIT_FAILURE);
@@ -63,7 +70,7 @@ int main(int argc, char **argv) {
 			if (isInteger(col_a1) && isInteger(col_a2) &&
 				isInteger(col_b1) && isInteger(col_b2) &&
 				strstr(A2, ",") && strstr(A4, ",")) {
-				// into the coordinate-based diff 
+				// into the coordinate-based diff
 				CDIFF();
 				printf("Coordinate-based diff: done!\n");
 			}

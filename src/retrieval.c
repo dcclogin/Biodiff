@@ -1,3 +1,10 @@
+/*
+* @Author: rumia
+* @Date:   2016-08-08 23:23:45
+* @Last Modified by:   rumia
+* @Last Modified time: 2016-08-11 03:43:26
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,7 +20,7 @@ Retrieval *trieGenerate(void) {
 	}
 	return temp;
 }
- 
+
 /* trieIncert: incert a pattern string to a trie */
 void trieIncert(char *str, Retrieval **pRoot) {
 	Retrieval *temp = *pRoot;
